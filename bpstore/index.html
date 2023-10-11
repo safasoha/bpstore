@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Info</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Marque tag -->
+    <div class="text-bg-success py-2 fw-bold text-uppercase">
+      <marquee behavior="" direction=""
+        ><span class="text-bolder text-bg-danger rounded-circle m-lg-2 fs-">***</span> Personal Business Information
+         <span class="text-bolder text-bg-danger rounded-circle m-lg-2 fs-">***</span></marquee
+      >
+    </div>
+    <!-- gallon card -->
+    <div class="card-group">
+      <div class="card">
+        <button
+          type="button"
+          class="btn btn-warning fs- fw-bold text-uppercase"
+        >
+          For Gallon Details <a title="printPage Me" class="text-bg-danger ms-3
+          fw-bolder p-1 rounded-3 text-decoration-none" href="card.html"> 
+            Click Me </a>  
+        </button>
+      </div>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <button
+          type="button"
+          class="btn btn-warning fs- fw-bold text-uppercase"
+        >
+          Order Cigarettes <a title="printPage Me" class="text-bg-danger ms-3
+          fw-bolder p-1 rounded-3 text-decoration-none" href="cigarettes.html"> 
+            Click Me </a>
+            
+        </button>
+      </div>
+    </div>
+    <!-- start 1st section -->
+    <div class="text-center py-2">
+      <button class="fw-bold fs-5 rounded-2 text-bg-light text-primary">
+        <a title="printPage Me" class="text-decoration-none" href="card.html"> 
+       <!-- Date : Aug 31, 2023  -->
+      <span>  
+        <div class="time"></div>
+        <div class="date"></div>
+      </a>
+      </span>
+        <!-- print function-->
+        <span class="">
+          <button class="ms-5 fw-bolder rounded-2" onclick="printPage()">
+            Print Me
+          </button></span
+        >
+      </button>
+    </div>          
+    <!-- shift report  start-->
+    <div class="card-group">
+      <div class="card">
+        <button
+          type="button"
+          class="btn btn-info fs- fw-bold text-uppercase"
+        >
+         <!-- Shift Report <span class="text-white ms-1">rashid</span> -->
+         Shift Report <span class="text-white ms-1">*</span>
+        </button>
+        <img src="hisab.jpg" class="card-img-top text-center text-bg-danger"  
+        alt="NOT FINISH">
+      </div>
+    </div> 
+    </div>
+    
+    <!-- expense   start-->
+    <div class="card-grou">
+      <div class="card pb-3">
+        <button
+          type="button"
+          class="btn btn-secondary fs fw-bold text-uppercase"
+        >
+         <!-- Exp  :  <span class="text-warning ms-3">rashid : 663 </span> -->
+         Exp  :  <span class="text-warning ms-3">ali : 735.00</span>
+         
+        </button>
+         
+      </div>
+    </div>
+      <!-- auto shop start -->
+      <!-- start card -->
+    <div class="card-group">
+      <div class="card">
+        <button
+          type="button"
+          class="btn btn-secondary fs- fw-bold text-uppercase"
+        >
+          Auto shop 
+        </button>
+      </div>
+    </div>
+    <!-- auto shop start-->
+    <div class="pb-3">
+      <div class="d-flex justify-content-around border border-dark fw-bolder">
+        <!--this week start-->
+        <div class="p-0 text-info">T.M</div>
+        <div class="p-0 text-danger">1037</div>
+        <div class="p-0 text-info">Etc</div>
+        <div class="p-0 text-danger">84</div>
+        <div class="p-0 text-info">Rest</div>
+        <div class="p-0 text-danger">953</div>
+          <!--15-->
+          <!--this week end-->
+
+          <!-- last week start-->
+          <!-- <div class="p-0 text-info">T.M</div>
+          <div class="p-0 text-danger">2233</div>
+          <div class="p-0 text-info">Etc</div>
+          <div class="p-0 text-danger">623</div>
+          <div class="p-0 text-info">Rest</div>
+          <div class="p-0 text-danger">1610=805</div>
+          75c-->
+          <!-- last week end -->
+        </div>
+      </div>
+    </div>
+    <!-- <p id="data"></p> -->
+    <!-- #footer start -->
+    <div class="text-bg-success text-center pt-3 fw-bold">
+      <span class="text-white">
+        All Rights Reserved @ Jaber Ali , 2023
+        </span>
+        <p>
+        <a
+          class="fw-bolder text-warning text-decoration-none px-2"
+          href="https://ali332147.github.io/bp-store/"
+          target="_blank"
+        ></a>
+      </p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    function printPage() {
+      window.print();
+    }
+    
+    <!-- date time start -->
+    const timeElement = document.querySelector(".time");
+    const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+ function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+} 
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  return ` ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()-1}, ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
+
+  </script>
+</html>
+
+
+
